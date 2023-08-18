@@ -1,9 +1,15 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<head>
-  <link rel="stylesheet" type="text/css" href="{% static 'cvdor/css/style.css' %}">
-</head>
 
-<h1>Hello Django App</h1>
 
-<p>The plan is to make a database of camping plots</p>
+{% block content %}
+
+<div class="container">
+  
+  <h1>Hello Django App</h1>
+
+  <p>The plan is to make a database of camping plots</p>
+</div>
+
+
+{% endblock %}
