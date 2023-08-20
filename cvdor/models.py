@@ -43,8 +43,8 @@ class Parcela(models.Model):
     number = models.CharField('Plot Number', max_length=20)
     campsite = models.ForeignKey(Campsite, blank=True, null=True, on_delete=models.CASCADE)
     group = models.ForeignKey('Group', blank=True, null=True, on_delete=models.CASCADE)
-    width = models.IntegerField('Size', blank=True)
-    length = models.IntegerField('Plot Length', blank=True)
+    width = models.IntegerField('Size', blank=True, null=True)
+    length = models.IntegerField('Plot Length', blank=True, null=True)
     description = models.TextField('Description')
     sun = models.ForeignKey(Sun, blank=True, null=True, on_delete=models.CASCADE)
 

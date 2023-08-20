@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Parcela
 from .forms import ParcelaForm, ParcelaFormSm
+from django.http import HttpResponseRedirect
 
 
 def home(request):
@@ -26,5 +27,20 @@ def update_parcela(request, parcela_id):
     parcela = Parcela.objects.get(pk=parcela_id)
     form = ParcelaFormSm(request.POST or None)
     return render(request, "update_parcela.html", {"parcela": parcela, "form": form})
+
+# Add a new Parcela
+def add_parcela(request):
+    submitted = False
+    if request.method == "POST":
+        form = ParcelaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/add_parcela?submitted=True')
+    else:
+        form = ParcelaForm
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'add_parcela.html', {"form": form, 'submitted': submitted})
+
 
 

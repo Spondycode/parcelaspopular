@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div class=container>
+  
+  <h3>Add a Parcela</h3>
+<br>
+    {% if submitted %}
+  <h3>Your Parcela was submitted successfully</h3>
+
+    {% else %}
+
+
+  <form action="" method=POST>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="" value="Submit" class="btn btn-info" >
+
+  </form>
+
+    {% endif %}
+</div>
+
+{% endblock %}
+

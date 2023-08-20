@@ -7,4 +7,5 @@ urlpatterns = [
     path('parcelas', views.all_parcelas, name='all-parcelas'),
     path('show_parcela/<parcela_id>', views.show_parcela, name='show-parcela'),
     path('update_parcela/<parcela_id>', views.update_parcela, name='update-parcela'),
+    path('add_parcela', views.add_parcela, name='add-parcela'),
 ]

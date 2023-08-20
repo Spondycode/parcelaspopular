@@ -9,6 +9,7 @@ class ParcelaForm(ModelForm):
     class Meta:
         model = Parcela
         fields = (
+            "number",
             "campsite", 
             "group", 
             "width", 
@@ -17,7 +18,7 @@ class ParcelaForm(ModelForm):
             "sun", 
         )
         labels = {
-            "number": "", 
+            "number": "",
             "campsite": "", 
             "group": "", 
             "width": "", 
@@ -27,11 +28,14 @@ class ParcelaForm(ModelForm):
         }
 
         widgets = {
-            "campsite": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "campsite"}
+            "number": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "Number of the Parcela"}
             ),
-            "group": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "Price level of plot"}
+            "campsite": forms.Select(
+                attrs={"class": "form-control" }
+            ),
+            "group": forms.Select(
+                attrs={"class": "form-control" }
             ),
             "width": forms.TextInput(
                 attrs={"class": "form-control", "placeholder": "Total Width"}
@@ -43,7 +47,7 @@ class ParcelaForm(ModelForm):
                 attrs={"class": "form-control", "placeholder": "description"}
             ),
             "sun": forms.Select(
-                attrs={"class": "form-control", "placeholder": "Sun or Shadow"}
+                attrs={"class": "form-control" }
             ),
         }
 
@@ -54,25 +58,24 @@ class ParcelaFormSm(ModelForm):
     class Meta:
         model = Parcela
         fields = (
-            "number",
             "campsite", 
             "description", 
+            "sun",
         )
         labels = {
-            "number": "",
             "campsite": "", 
-            "description": "", 
+            "description": "",
+            "sun": "",
         }
 
         widgets = {
-
-            "number": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "number"}
-            ),
-            "campsite": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "campsite"}
+            "campsite": forms.Select(
+                attrs={"class": "form-control" }
             ),
             "description": forms.TextInput(
                 attrs={"class": "form-control", "placeholder": "description"}
+            ),
+            "sun": forms.Select(
+                attrs={"class": "form-control" }
             ),
         }
