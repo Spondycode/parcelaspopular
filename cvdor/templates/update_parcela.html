@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div class=container>
+  
+  <h1>Update Parcela<h1>
+
+<center>    
+     {% if submitted %} 
+     <h3> Your Venue was updated successfully !!!</h3>
+
+     {% else %}
+ 
+        {{ parcela }}
+      <form action="" method=POST enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <p> {{ form.campsite}}</p>
+        <p>{{ form.description }}</p>
+        <p>{{ form.sun }}</p>
+
+
+        <input type="submit" value="Update" class="btn btn-info" >
+
+
+
+
+      </form>
+ 
+
+
+</div>
+
+<h2> You have to be logged in to Update Venues</h2>
+{% endif %}
+{% endblock %}
+

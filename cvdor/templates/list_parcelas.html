@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div class=container>
+  
+  <h1>Parcelas</h1>
+
+    <p>Show cards of the Parcelas</p>
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Sun/Shadow</th>
+      <th scope="col">More Info</th>
+    </tr>
+  </thead>
+    {% for parcela in parcela_list %}
+  <tbody>
+    <tr>
+      <td>{{ parcela.number}}</td>
+      <td>{{ parcela.group}}</td>
+      <td>{{ parcela.description}}</td>
+      <td>{{ parcela.sun}}</td>
+      <td> <a class="btn btn-outline-info btn-sm" href="{% url 'show-parcela' parcela.id %}">Details</a></td>
+      
+
+    </tr>
+  </tbody>
+    {% endfor %}
+</table>
+
+
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,39 @@
+ {% extends 'base.html' %}
+
+{% block content %}
+    
+<div class=container>
+  <br/>
+  <div class="card">
+    <div class="card-header">
+     <h2>Parcela {{ parcela.number }}</h2>
+    </div>
+      <div class="card-body">
+           <h5 class="card-title">{{ parcela.campsite }}</h5>
+           <p class="card-text">Price Group: {{ parcela.group }}</p>
+           <p class="card-text">Full Width: {{ parcela.width }}m</p>
+           <p class="card-text">Length: {{ parcela.length }}m</p>
+       <hr>
+       <h3>Description: </h3>
+           <p class="card-text">{{ parcela.description }}</p>
+       <hr>
+           <p class="card-text">Sun or Shadow: {{ parcela.sun }}</p>
+      </div>
+    <div class="container text-center">
+      <p class="todo"> ToDo -     
+         Photo here if there is one
+         Or a zoom in on the campsite map</p>
+    </div>
+
+    <div class="card-footer text-body-secondary text-center">
+      <a href="{% url 'update-parcela' parcela.id %}  " class="btn btn-primary">Update </a>
+      <p>Only for admin...</p>
+
+     </div>
+  </div>
+<br><br>
+<p class="todo text-center"> ToDo - Here is where the comments section will be...</p>
+</div>
+{% endblock %}
+
+

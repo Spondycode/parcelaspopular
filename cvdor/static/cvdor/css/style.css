@@ -1,9 +1,15 @@
 
 h1 {
-  color: blue;
+  color: darkred;
   text-align: center;
 }
 
 body {
-  background-color: lightgray;
+  background-color: lightpink;
+}
+
+p.todo {
+  color: red;
+  text-align: center;
+  background-color: yellow;
 }
