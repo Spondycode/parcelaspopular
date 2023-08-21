@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if form.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  There was an error with your form...
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+  <p class="text-center">There was an error with your form...</p>
+{% endif %}
+
+    
+<div class=container>
+  
+  <h1>Register User</h1>
+
+
+<br>
+<div class="card">
+  <div class="card-header">
+    Register Here
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Add your Favourite Parcelas</h5>
+    <p class="card-text">
+  <form action="{% url 'register_user' %}" method=POST>
+      {% csrf_token %}
+        {{ form.as_p }}
+
+<br>
+        <center>
+    <input type="submit" class="btn btn-info " value="Submit">
+        </center>
+    </form>
+
+      </p>
+  </div>
+</div>
+ 
+
+
+
+</div>
+
+{% endblock %}
+
