@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cvdor.apps.CvdorConfig',
+    'members.apps.MembersConfig',
 ]
 
 MIDDLEWARE = [
