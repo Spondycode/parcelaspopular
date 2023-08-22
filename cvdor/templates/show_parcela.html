@@ -26,9 +26,11 @@
     </div>
 
     <div class="card-footer text-body-secondary text-center">
+
+{% if user.is_authenticated %}
       <a href="{% url 'update-parcela' parcela.id %}  " class="btn btn-primary">Update </a>
       <p>Only for admin...</p>
-
+{% endif %}
      </div>
   </div>
 <br><br>
